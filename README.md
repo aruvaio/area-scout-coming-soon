@@ -1,0 +1,1 @@
+# area-scout-coming-soon
