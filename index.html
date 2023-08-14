@@ -68,23 +68,29 @@
         }
 
         .social-icons {
-    margin-top: 20px; /* Space above the social icons */
-    display: flex;
-    justify-content: center; /* Center the icons horizontally */
-    gap: 25px; /* Space between the icons */
-}
+            margin-top: 20px; /* Space above the social icons */
+            display: flex;
+            justify-content: center; /* Center the icons horizontally */
+            gap: 25px; /* Space between the icons */
+        }
 
-.social-icons a {
-    color: black;
-    font-size: 24px;
-    text-decoration: none;
-}
+        .social-icons a {
+            color: black;
+            font-size: 24px;
+            text-decoration: none;
+        }
 
-.social-icons a:hover {
-    opacity: 0.7;
-}
+        .social-icons a:hover {
+            opacity: 0.7;
+        }
 
 
+
+        .error-message {
+            color: #333; /* Near-black gray */
+            display: none; 
+            font-weight: bold;
+        }
       
     
     
@@ -103,8 +109,8 @@
     <!-- Email Input -->
     <form name="subscribe" method="POST" data-netlify="true" netlify>
         <input type="email" name="email" placeholder="Enter your email..." class="email-input">
-        <div class="error-message" style="color: red; display: none;">Please enter a valid email address.</div>
         <button type="submit" class="notify-btn">Get Notified</button>
+        <div class="error-message">Please enter a valid email address.</div>
     </form>
 
     <div class="social-icons">
@@ -136,7 +142,7 @@
     // Set the randomly selected image as the background
     document.body.style.backgroundImage = `url('${randomImage}')`;
 
-        document.querySelector("form[name='subscribe']").addEventListener("submit", function(event) {
+    document.querySelector("form[name='subscribe']").addEventListener("submit", function(event) {
         const emailInput = document.querySelector("input[name='email']");
         const errorMessage = document.querySelector(".error-message");
         
@@ -147,10 +153,16 @@
             // If email is not valid, show error message and prevent form submission
             errorMessage.style.display = "block";
             event.preventDefault();
+
+            // Hide the error message after 3 seconds
+            setTimeout(function() {
+                errorMessage.style.display = "none";
+            }, 2000); // 3000 milliseconds = 3 seconds
         } else {
             errorMessage.style.display = "none";
         }
     });
+
 
 
 
