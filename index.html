@@ -103,6 +103,7 @@
     <!-- Email Input -->
     <form name="subscribe" method="POST" data-netlify="true" netlify>
         <input type="email" name="email" placeholder="Enter your email..." class="email-input">
+        <div class="error-message" style="color: red; display: none;">Please enter a valid email address.</div>
         <button type="submit" class="notify-btn">Get Notified</button>
     </form>
 
@@ -134,6 +135,23 @@
 
     // Set the randomly selected image as the background
     document.body.style.backgroundImage = `url('${randomImage}')`;
+
+        document.querySelector("form[name='subscribe']").addEventListener("submit", function(event) {
+        const emailInput = document.querySelector("input[name='email']");
+        const errorMessage = document.querySelector(".error-message");
+        
+        // Simple regex to validate email
+        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        
+        if (!emailRegex.test(emailInput.value)) {
+            // If email is not valid, show error message and prevent form submission
+            errorMessage.style.display = "block";
+            event.preventDefault();
+        } else {
+            errorMessage.style.display = "none";
+        }
+    });
+
 
 
 </script>
