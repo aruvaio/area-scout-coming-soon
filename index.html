@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Random Background</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(181, 181, 181, 0.6);  /* Light grey overlay with 50% opacity */
+            pointer-events: none;  /* Ensures this layer doesn't interfere with any page interactions */
+        }
+
+         .centered-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        img.logo {
+            width: 600px; /* You can adjust this based on your logo's dimensions */
+           
+        }
+
+        h1 {
+            font-size: 2em;
+            
+        }
+
+        .email-input {
+            padding: 10px;
+            font-size: 1em;
+            width: 250px;
+            margin-bottom: 20px;
+        }
+
+        .notify-btn {
+            padding: 10px 15px;
+            font-size: 1em;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .notify-btn:hover {
+            background-color: #555;
+        }
+
+        .social-icons {
+    margin-top: 20px; /* Space above the social icons */
+    display: flex;
+    justify-content: center; /* Center the icons horizontally */
+    gap: 25px; /* Space between the icons */
+}
+
+.social-icons a {
+    color: black;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    opacity: 0.7;
+}
+
+
+      
+    
+    
+</style>
+
+</head>
+<body>
+
+<div class="centered-content">
+    <!-- Logo -->
+    <img src="logo.png" alt="Logo" class="logo">
+
+    <!-- Coming Soon Text -->
+    <h1>Coming Soon</h1>
+
+    <!-- Email Input -->
+    <input type="email" placeholder="Enter your email..." class="email-input">
+
+    <!-- Get Notified Button -->
+    <button class="notify-btn">Get Notified</button>
+
+    <div class="social-icons">
+        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+
+</div>
+
+    
+
+
+<!-- Content will go here -->
+
+<script>
+    // Array of image paths
+    const images = [
+        "./michael-denning-2hbu_Ep2A3U-unsplash.jpg",
+        "./jason-pan-Kw6_4aIn2X4-unsplash.jpg",
+        "./adlan-mrnkk2GQ32w-unsplash.jpg",
+        "anthony-delanoix-b5POxb2aL9o-unsplash.jpg"
+      
+    ];
+
+    // Randomly select an image
+    const randomImage = images[Math.floor(Math.random() * images.length)];
+
+    // Set the randomly selected image as the background
+    document.body.style.backgroundImage = `url('${randomImage}')`;
+
+
+</script>
+
+</body>
+</html>
