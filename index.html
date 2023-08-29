@@ -3,170 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon" sizes="32x32">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <title>Area Scout | Find.Explore.Connect</title>
-
+    <title>Coming Soon</title>
     <style>
         body {
-            margin: 0;
-            height: 100vh;
-            overflow: hidden;
-            font-family: Arial, sans-serif;
-            position: relative;
-            background-size: cover;
-            background-position: center;
-        }
-        
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(181, 181, 181, 0.6);  /* Light grey overlay with 50% opacity */
-            pointer-events: none;  /* Ensures this layer doesn't interfere with any page interactions */
-        }
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background: #000; /* Black background */
+}
 
-         .centered-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-        }
+.centered-content {
+    display: flex;
+    flex-direction: column; /* Column layout by default */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0 5%;
+}
 
-        img.logo {
-            width: 450px; /* You can adjust this based on your logo's dimensions */
-           
-        }
+video {
+    width: 90%; /* Full width for small screens */
+    margin-bottom: 5%; /* Spacing between video and content */
+}
 
-        h1 {
-            font-size: 2em;
-            
-        }
+.content-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
 
-        .email-input {
-            padding: 10px;
-            font-size: 1em;
-            width: 250px;
-            margin-bottom: 20px;
-        }
+img.logo {
+    width: 80%; /* Adjust based on screen size */
+}
 
-        .notify-btn {
-            padding: 10px 15px;
-            font-size: 1em;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+h1 {
+    font-size: 2em;
+    color: #FFF; /* White text color */
+    margin: 0;
+}
 
-        .notify-btn:hover {
-            background-color: #555;
-        }
+.email-input, .notify-btn {
+    margin-bottom: 10px;
+}
 
-        .social-icons {
-            margin-top: 20px; /* Space above the social icons */
-            display: flex;
-            justify-content: center; /* Center the icons horizontally */
-            gap: 25px; /* Space between the icons */
-        }
+.email-input {
+    padding: 10px;
+    font-size: 1em;
+    width: 100%; /* Set width to 100% */
+    max-width: 250px; /* Set maximum width to 250px */
+    box-sizing: border-box;
+    align-self: center;
+}
 
-        .social-icons a {
-            color: black;
-            font-size: 24px;
-            text-decoration: none;
-        }
+.notify-btn {
+    padding: 10px 15px;
+    margin: 10px 80px;
+    font-size: 1em;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-        .social-icons a:hover {
-            opacity: 0.7;
-        }
+.notify-btn:hover {
+    background-color: #555;
+}
+
+.error-message {
+    color: #aaa; /* Light gray for visibility against the black background */
+    display: none;
+    font-weight: bold;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+    .centered-content {
+        flex-direction: row; /* Row layout for larger screens */
+        padding: 0 15%; /* Increased padding for larger screens */
+        justify-content: space-between;
+    }
+
+    video {
+        max-width: 800px; /* Larger video for larger screens */
+        margin-right: 5%; /* Spacing between video and content */
+        margin-bottom: 0;
+    }
+
+    img.logo {
+        width: 450px; /* Adjust based on your logo's dimensions */
+    }
+}
+
+@media (max-width: 768px) {
+    .centered-content {
+        flex-direction: column;
+        align-items: left; /* Center-align items horizontally */
+        padding: 0 5%; /* Adjust the horizontal padding */
+    }
+
+    .centered-content h1 {
+        text-align: left; /* Align the text to the left in column mode */
+    }
+
+    .content-right {
+        width: 100%; /* Make sure the content takes full width */
+        align-items: center; /* Center-align items horizontally */
+    }
+
+    video {
+        margin-bottom: 20px; /* Add some space between the video and the content */
+        max-width: 100%; /* Adjust video width to fit screen */
+    }
+
+    .email-input {
+        width: 80%; /* Set width to 80% of parent's width on smaller screens */
+        margin-left: 30px;
+    }
+
+    .checkbox-container {
+        width: 80%; /* Set width to 80% of parent's width on smaller screens */
+        margin-left: 30px;
+    }
+}
+
+/* ... existing styles ... */
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* spacing between checkbox and label */
+    margin-bottom: 10px; /* spacing above the button */
+    width: 100%; /* Set width to 100% */
+    box-sizing: border-box;
+    align-self: center;
+}
+
+.checkbox-container label {
+    color: #FFF; /* White text color */
+    font-size: 1.1em; /* Increased font size */
+}
+
+.business-checkbox {
+    margin: 0; /* remove default margin */
+}
+
+.notify-btn {
+    /* ... existing styles ... */
+    align-self: center; /* center align the button */
+
+}
+
+.social-icons {
+    margin-top: 20px; /* Space above the social icons */
+    display: flex;
+    justify-content: center; /* Center the icons horizontally */
+    gap: 25px; /* Space between the icons */
+    font-size: 24px;
+}
 
 
-
-        .error-message {
-            color: #333; /* Near-black gray */
-            display: none; 
-            font-weight: bold;
-        }
-      
-    
-    
-</style>
-
+    </style>
 </head>
 <body>
+    <div class="centered-content">
+        <!-- MP4 Video -->
+        <video autoplay muted loop playsinline>
+            <source src="as-loading.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
-<div class="centered-content">
-    <!-- Logo -->
-    <img src="logo.png" alt="Logo" class="logo">
+        <div class="content-right">
+            <!-- Logo -->
+            <img src="logo.png" alt="Logo" class="logo">
 
-    <!-- Coming Soon Text -->
-    <h1>Coming Soon</h1>
+            <!-- Coming Soon Text -->
+            <h1>Coming Soon</h1>
 
-    <!-- Email Input -->
-    <form name="subscribe" method="POST" data-netlify="true" netlify>
-        <input type="email" name="email" placeholder="Enter your email..." class="email-input">
-        <button type="submit" class="notify-btn">Get Notified</button>
-        <div class="error-message">Please enter a valid email address.</div>
-    </form>
+            <!-- Email Input -->
+            <!-- ... -->
+            <form name="subscribe" method="POST" data-netlify="true" netlify>
+                <input type="email" name="email" placeholder="Enter your email..." class="email-input">
+                <div class="checkbox-container">
+                    <input type="checkbox" id="businessOwner" name="businessOwner" class="business-checkbox">
+                    <label for="businessOwner">I am a business Owner</label>
+                </div>
+                <button type="submit" class="notify-btn">Get Notified</button>
+                <div class="error-message">Please enter a valid email address.</div>
+            </form>
+            <!-- ... -->
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61550812851588" target="_blank" style="color: white;"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/@areascoutcanada" target="_blank" style="color: white;"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/areascout.ca/" target="_blank" style="color: white;"><i class="fab fa-instagram"></i></a>
+            </div>
 
-    <div class="social-icons">
-        <a href="https://www.youtube.com/@areascoutcanada" target="https://www.youtube.com/@areascoutcanada"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.instagram.com/areascout.ca/" target="https://www.instagram.com/areascout.ca/"><i class="fab fa-instagram"></i></a>
+        </div>
     </div>
 
-</div>
+    <script>
+        document.querySelector("form[name='subscribe']").addEventListener("submit", function(event) {
+            const emailInput = document.querySelector("input[name='email']");
+            const errorMessage = document.querySelector(".error-message");
+            
+            // Simple regex to validate email
+            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            
+            if (!emailRegex.test(emailInput.value)) {
+                // If email is not valid, show error message and prevent form submission
+                errorMessage.style.display = "block";
+                event.preventDefault();
 
-    
-
-
-<!-- Content will go here -->
-
-<script>
-    // Array of image paths
-    const images = [
-        "./michael-denning-2hbu_Ep2A3U-unsplash.jpg",
-        "./jason-pan-Kw6_4aIn2X4-unsplash.jpg",
-        "./adlan-mrnkk2GQ32w-unsplash.jpg",
-        "anthony-delanoix-b5POxb2aL9o-unsplash.jpg"
-      
-    ];
-
-    // Randomly select an image
-    const randomImage = images[Math.floor(Math.random() * images.length)];
-
-    // Set the randomly selected image as the background
-    document.body.style.backgroundImage = `url('${randomImage}')`;
-
-    document.querySelector("form[name='subscribe']").addEventListener("submit", function(event) {
-        const emailInput = document.querySelector("input[name='email']");
-        const errorMessage = document.querySelector(".error-message");
-        
-        // Simple regex to validate email
-        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-        
-        if (!emailRegex.test(emailInput.value)) {
-            // If email is not valid, show error message and prevent form submission
-            errorMessage.style.display = "block";
-            event.preventDefault();
-
-            // Hide the error message after 3 seconds
-            setTimeout(function() {
+                // Hide the error message after 3 seconds
+                setTimeout(function() {
+                    errorMessage.style.display = "none";
+                }, 3000); // 3000 milliseconds = 3 seconds
+            } else {
                 errorMessage.style.display = "none";
-            }, 2000); // 3000 milliseconds = 3 seconds
-        } else {
-            errorMessage.style.display = "none";
-        }
-    });
-
-
-
-
-</script>
-
+            }
+        });
+    </script>
 </body>
 </html>
